@@ -1,0 +1,1 @@
+alert("Hello there, this was written in JavaScript using external JavaScript.");
