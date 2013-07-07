@@ -27,7 +27,7 @@ if(isEmpty($_REQUEST['fName']) || isEmpty($_REQUEST['lName'])){
 	fputcsv($fp,$details);
 	
 	//Close the file once done with it
-	fclose($fp)
+	fclose($fp);
 	
 	success();
 
