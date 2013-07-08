@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/login_js.css">
+	</head>
+
+	<body>
+	
+		<form id="Form" action="check.php" method="POST" onsubmit="return validateAll('results')">
+			<div class="inputFields">
+				<div>
+					<label>First Name:</label>
+					<input id="fName" type="text" name="fName">
+				</div>
+				<div>
+					<label>Last Name:</label>
+					<input id="lName" type="text" name="lName">
+				</div>
+				<div>
+					<label>Email:</label>
+					<input id="email" type="text" name="email">
+				</div>
+				
+				<div>
+					<label>Favourite Hobby:</label>
+					<select name="hobby">
+						<option value="Reading">Reading</option>
+						<option value="Cricket">Cricket</option>
+						<option value="PC">PC Games</option>
+					</select>
+				</div>
+				
+				<div>
+					<label>Are you male?:</label>
+					<input type="checkbox" name="maleCheck">
+				</div>
+			</div>
+				
+			<div class="submitButton">
+				<input type="submit" name="submit">
+			</div>
+		</form>
+		
+		<h3 id="results"></h3>
+
+
+	</body>
+
+</html>

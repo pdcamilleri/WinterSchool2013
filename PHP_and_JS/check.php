@@ -6,7 +6,7 @@
 session_start();
 
 //Checks both the fields are set
-if(isEmpty($_REQUEST['fName']) || isEmpty($_REQUEST['lName'])){
+if(isEmpty($_REQUEST['fName']) || isEmpty($_REQUEST['lName']) || isEmpty($_REQUEST['email'])){
 	
 	failure();
 
@@ -19,8 +19,8 @@ if(isEmpty($_REQUEST['fName']) || isEmpty($_REQUEST['lName'])){
 	$fp = fopen('Details.csv','w');
 	
 	//Prepare the CSV headers and data
-	$headers = array('First Name','Last Name','Hobby','Male?');
-	$details = array($_REQUEST['fName'],$_REQUEST['lName'],$_REQUEST['hobby'],$_REQUEST['maleCheck']);
+	$headers = array('First Name','Last Name','Email','Hobby','Male?');
+	$details = array($_REQUEST['fName'],$_REQUEST['lName'],$_REQUEST['email'],$_REQUEST['hobby'],$_REQUEST['maleCheck']);
 	
 	//Write as CSV file
 	fputcsv($fp,$headers);
@@ -39,6 +39,8 @@ function success(){
 	
 	$last = $_REQUEST['lName'];
 	
+	$email = $_REQUEST['email'];
+	
 	$hobby = $_REQUEST['hobby'];
 	
 	$male = isset($_REQUEST['maleCheck']);
@@ -54,6 +56,8 @@ function success(){
 			<p> Your first name is $first <p>
 			
 			<p> Your last name is $last </p>
+			
+			<p> Your email is $email </p>
 			
 			<p> You like $hobby </p>
 			
@@ -107,6 +111,9 @@ echo "<html>
 		echo "<p> The last name field is empty </p>";
 	}
 
+	if(isEmpty($_REQUEST['email'])) {
+		echo "<p> The email field is empty </p>";
+	}
 	
 
 echo "<a href = \"login.html\">Try Again</a>
