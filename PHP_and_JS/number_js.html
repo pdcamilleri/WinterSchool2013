@@ -8,11 +8,23 @@
 		<h2>Number guessing game in JavaScript!</h2>
 		<div id="input">
 			<label>Enter your guess</label>
-			<input type="textbox" id="guess" name="guess" />
+			<input type="textbox" id="guess" name="guess"/>
 		</div>
 		<div id="output"></div>
-		<div id="button">
-			<input type="submit" />
+		<div id="buttons">
+			<input type="submit" value="Guess" onclick="guess()"/>
+			<input type="submit" value="New game" onclick="newGame()" />
+			
+		</div>
+		<br />
+		<div>
+			<label>Cheat</label>
+			<input type="checkbox" id="cheat" value="cheat" onclick="showNumberToGuess()" />
+			
+			<div id="cheatShow" style="display:none">
+				<label>Number to guess:</label>
+				<input id="numberToGuess" type="text" />
+			</div>
 		</div>
 	</body>
 </html>
