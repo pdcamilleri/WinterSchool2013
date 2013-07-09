@@ -1,0 +1,33 @@
+<html>
+<body>
+<link type="text/css" rel="stylesheet" href="css/bubblecapture.css">
+
+<h3>Capture then Bubble</h3>
+
+<div class="d1" onclick="highlight(this)">1  
+    <div class="d2" onclick="highlight(this)">2
+        <div class="d3" onclick="highlight(this)">3 
+        </div> 
+    </div>
+</div>
+
+<script>
+
+
+var divs = document.getElementsByTagName('div')
+
+for(var i=0; i<divs.length; i++) {
+  divs[i].addEventListener("click", highlightThis, true)
+  //divs[i].addEventListener("click", highlightThis, false)
+}
+
+function highlightThis() {
+  this.style.backgroundColor='yellow'
+  alert(this.className)
+  this.style.backgroundColor = ''
+}
+</script>
+
+
+</body>
+</html>
