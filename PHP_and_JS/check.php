@@ -19,7 +19,7 @@ if(isEmpty($_REQUEST['fName']) || isEmpty($_REQUEST['lName'])){
 	$fp = fopen('Details.csv','w');
 	
 	//Prepare the CSV headers and data
-	$headers = array('First Name','Last Name','Hobby','Male?');
+	$headers = "First Name,Last Name,Email,Hobby,Male?\n";
 	
 	if(isset($_REQUEST['maleCheck'])){
 		$gender = "Male";
@@ -27,11 +27,11 @@ if(isEmpty($_REQUEST['fName']) || isEmpty($_REQUEST['lName'])){
 		$gender = "Female";
 	}
 	
-	$details = array($_REQUEST['fName'],$_REQUEST['lName'],$_REQUEST['hobby'],$gender);
+	$details = $_REQUEST['fName'].",".$_REQUEST['lName'].",".$_REQUEST['email'].",".$_REQUEST['hobby'].",".$gender."\n";
 	
 	//Write as CSV file
-	fputcsv($fp,$headers);
-	fputcsv($fp,$details);
+	fputs($fp,$headers);
+	fputs($fp,$details);
 	
 	//Close the file once done with it
 	fclose($fp);
@@ -48,6 +48,8 @@ function success(){
 	
 	$hobby = $_REQUEST['hobby'];
 	
+	$email = $_REQUEST['email'];
+	
 	$male = isset($_REQUEST['maleCheck']);
 	
 	//Returns session id to propagate
@@ -61,6 +63,8 @@ function success(){
 			<p> Your first name is $first <p>
 			
 			<p> Your last name is $last </p>
+			
+			<p> Your email is $email </p>
 			
 			<p> You like $hobby </p>
 			

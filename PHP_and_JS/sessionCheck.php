@@ -10,6 +10,8 @@ function page(){
 	
 	$last = $_SESSION['lName'];
 	
+	$email = $_SESSION['email'];
+	
 	$hobbyOld = $_SESSION['hobby'];
 	
 	$hobbyNew = $_REQUEST['hobby'];
@@ -27,6 +29,8 @@ function page(){
 			<p> Your first name is $first <p>
 			
 			<p> Your last name is $last </p>
+			
+			<p> Your email is $email </p>
 	";
 	
 	if($hobbyOld == $hobbyNew){
