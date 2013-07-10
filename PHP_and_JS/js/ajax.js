@@ -21,6 +21,6 @@ function showHint(str)
 			document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
 		}
 	} 
-	xmlhttp.open("GET","gethint.php?q="+str,true);
+	xmlhttp.open("GET","getHint.php?q="+str,true);
 	xmlhttp.send();
 }
